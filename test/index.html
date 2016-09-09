@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        .line {
+            height: 50px;
+            border: 1px solid red;
+            line-height: 50px;
+            margin-top: 30px;
+        }
+            .line span {
+                border: 1px solid green;display: inline-block
+            }
+            .line a {
+                border: 1px solid green;
+            }
+                 .line span:nth-child(1), .line img:nth-child(1), .line a:nth-child(1) {
+                    vertical-align: baseline;
+                }
+
+                .line span:nth-child(2), .line img:nth-child(2), .line a:nth-child(2) {
+                    vertical-align: top;
+                }
+
+                .line span:nth-child(3), .line img:nth-child(3), .line a:nth-child(3) {
+                    vertical-align: middle;
+                }
+
+                .line span:nth-child(4), .line img:nth-child(4), .line a:nth-child(4) {
+                    vertical-align: bottom;
+                }
+
+                .line span:nth-child(5), .line img:nth-child(5), .line a:nth-child(5) {
+                    vertical-align: text-top;
+                }
+
+                .line span:nth-child(6), .line img:nth-child(6), .line a:nth-child(6) {
+                    vertical-align: text-bottom;
+                }
+                .line span:nth-child(7), .line img:nth-child(7), .line a:nth-child(7) {
+                    vertical-align: central;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="line">
+        <span>baseline</span>
+        <span>top</span>
+        <span>middle</span>
+        <span>bottom</span>
+        <span>text-top</span>
+        <span>text-bottom</span>
+        <span>central</span>
+        stoneniqiu
+    </div>
+    <div class="line">
+        <img src="c.png" />
+        <img src="c.png" />
+        <img src="c.png" />
+        <img src="c.png" />
+        <img src="c.png" />
+        <img src="c.png" />
+        <img src="c.png" />
+        <img src="c.png" />
+    </div>
+    <div class="line">
+        <a>baseline</a>
+        <a>top</a>
+        <a>middle</a>
+        <a>bottom</a>
+        <a>text-top</a>
+        <a>text-bottom</a>
+        <a>central</a>
+    </div>
+    <div class="line" style="vertical-align: middle">
+        vertical-align: middle
+    </div>
+    <div class="line" style="vertical-align: top">
+        vertical-align: top
+    </div>
+    <div class="line" style="vertical-align: bottom">
+        vertical-align: bottom
+    </div>
+    <div>
+
+    </div>
+    <script>
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>MobileBone</title>
+    <link href="css/mobilebone.css" rel="stylesheet" />
+    <script src="js/mobilebone.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<!--
+    1.页面：主页，左页，右页，页面滑动。
+    2.弹框
+    3.list + 搜索
+    4.ajax
+    5.form
+    6.上下拉动
+ -->
+    <body>
+        <section id="main" class="page in" >
+            <div class="mainheader warm">
+                <a class="fl" title="设置" href="#left" data-transition="slide"><img src="../common/images/cog_30.png" /></a>
+                MobileBone
+                <a class="fr" title="时间轴" href="#right" data-transition="slide"><img src="../common/images/dot_30.png" /></a>
+            </div>
+            <div class="baby-content">
+
+            </div>
+        </section>
+        <section id="left" class="page out">
+            <div class="mainheader warm">
+                <a class="right-nav" href="#main" data-transition="slide"> </a>
+                设置
+            </div>
+
+        </section>
+        <section id="right" class="page out">
+            <div class="mainheader warm">
+                <a class="left-nav" href="#main" data-transition="slide" data-reverse="true"> </a>
+                日志
+            </div>
+
+        </section>
+ 
+    </body>
+</html>

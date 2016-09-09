@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>JqueryMobile</title>
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<!--
+    1.页面：主页，左页，右页，页面滑动。
+    2.弹框
+    3.list + 搜索
+    4.ajax
+    5.form
+    6.上下拉动
+ -->
+<body  >
+    <section data-role="page" id="main">
+        <div class="mainheader warm">
+            <a class="fl" title="设置" href="#left" data-transition="slide"><img src="../common/images/cog_30.png" /></a>
+            JqueryMobile
+            <a class="fr" title="时间轴" href="#right" data-transition="slide"><img src="../common/images/dot_30.png" /></a>
+        </div>
+        <div class="baby-content">
+            <!--<div class="airbox warm">
+                    <div class="air">良好</div>
+                    <div class="tempwarp">
+                        <canvas id="temperature" width="300" height="144"></canvas>
+                    </div>
+                </div>-->
+            <div id="viewport">
+                <div id="wrapper1">
+                    <div id="scroller1">
+                        <div class="slide">
+                            <div class="painting giotto"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="painting leonardo"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="painting gaugin"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="painting warhol"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="painting timg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="indicator">
+                    <div id="dotty">11</div>
+                </div>
+            </div>
+                <div class="listbox">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a data-rel="popup" href="#popupSydney" data-position-to="window" data-transition="fade" class="ui-shadow ui-btn music"><img src="css/images/b1.jpg" data-id="1"></a>
+                        </div>
+                        <div class="ui-block-b"><a href="#b2" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-shadow ui-btn music"><img src="css/images/b2.jpg" data-id="2"></a></div>
+                        <div class="ui-block-a"><a class="ui-shadow ui-btn music"><img src="css/images/b3.jpg" data-id="3"></a></div><div class="ui-block-b"><a class="ui-shadow ui-btn music"><img src="css/images/b4.jpg" data-id="4"></a></div>
+                    </div>
+                    <div data-role="popup" id="popupSydney" data-overlay-theme="a" data-theme="a" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                        <img class="popphoto" src="css/images/b1.jpg" style="max-height:512px;" alt="Sydney, Australia">
+                    </div>
+                    <div data-role="popup" id="b2" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                        <img class="popphoto" src="css/images/b2.jpg" style="max-height:512px;" alt="Sydney, Australia">
+                    </div>
+                </div>
+            <a href="#popupCloseRight" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">弹框</a>
+            <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p>这是一个弹框</p>
+            </div>
+        </div>
+        <div data-role="footer" style="overflow:hidden;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#left" data-transition="slide" data-reverse="true" data-icon="gear"></a></li>
+                    <li><a href="#main" data-transition="slide" class="ui-btn-active" data-icon="home"></a></li>
+                    <li><a href="#right" data-transition="slide" data-icon="edit"></a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </section>
+    <section data-role="page" id="left">
+        <div class="mainheader warm">
+            <a class="right-nav" href="#main" data-transition="slide"> </a>
+            设置
+        </div>
+        <div class="baby-content">
+            <form>
+                <label for="Name">姓名</label>
+                <input required type="text" data-clear-btn="true" name="text-3" id="Name" value="">
+                <label for="number-4">电话</label>
+                <input required type="tel" data-clear-btn="true" name="number-4" pattern="^(0|86|17951)?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}" id="number-4" value="">
+                <div class="ui-field-contain">
+                    <label for="select-native-1">语言:</label>
+                    <select name="select-native-1" id="select-native-1">
+                        <option value="1">JavaScript</option>
+                        <option value="2">C#</option>
+                        <option value="3">Java</option>
+                        <option value="4">Phyon</option>
+                    </select>
+                </div>
+                <fieldset data-role="controlgroup">
+                    <legend>物种:</legend>
+                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
+                    <label for="radio-choice-v-2a">程序媛</label>
+                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="off">
+                    <label for="radio-choice-v-2b">程序猿</label>
+                </fieldset>
+                <label for="flip-1">单身汪</label>
+                <select id="flip-1" name="flip-1" data-role="slider">
+                    <option value="off">是</option>
+                    <option value="on">否</option>
+                </select>
+                <label for="email-2">Email</label>
+                <input required type="email" data-clear-btn="true" name="email-2" id="email-2" value="">
+                <label for="data">日期</label>
+                <input required type="datetime-local" data-clear-btn="true" id="data" />
+                <label for="textarea-1">描述:</label>
+                <textarea required name="textarea-1" id="textarea-1"></textarea>
+                <button type="submit">提交</button>
+
+            </form>
+        </div>
+
+    </section>
+    <section data-role="page" id="right">
+        <div class="mainheader warm">
+            <a class="left-nav" href="#main" data-transition="slide" data-reverse="true"> </a>
+            日志
+        </div>
+        <div class="baby-content" id="wrapper">
+            <div id="scroller">
+                <div id="pullDown" class="">
+                    <span class="pullDownIcon">
+                        <img src="../common/images/loading-2.gif" />
+                    </span><span class="pullDownLabel">下拉刷新...</span>
+                </div>
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="搜索">
+                    <li>
+                        <img src="css/images/jm.png" />
+                        <h2>jQueryMobile</h2>
+                        <p><a href="http://jquerymobile.com/">jQueryMobile1.4.5</a>  js:196k css:203k</p>
+                    </li>
+                    <li>
+                        <img src="css/images/zp.png" />
+                        <h2>Zepto</h2>
+                        <p><a href="http://zeptojs.com/">Zepto.js1.2.0</a> js:26k</p>
+                    </li>
+                    <li>bootstrap</li>
+                    <li>react</li>
+                    <li>Angular</li>
+                    <li>senchaTouch</li>
+                    <li>
+                        <img src="css/images/jq.png" />
+                        <h2>jQuery</h2>
+                        <p><a href="http://jquery.com/">jQuery3.1.0</a></p>
+                    </li>
+                    <li>mobilebone</li>
+                   
+                </ul>
+                <div id="pullUp">
+                    <span class="pullUpIcon"><img src="../common/images/loading-2.gif" /></span>
+                    <span class="pullUpLabel">上拉加载更多...</span>
+                </div>
+            </div>
+        
+        </div>
+        <!--<div data-role="footer" style="overflow:hidden;">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#left" data-transition="slide" data-icon="gear"></a></li>
+                    <li><a href="#main" data-transition="slide" data-icon="home"></a></li>
+                    <li><a href="#right" data-transition="slide" class="ui-btn-active" data-icon="edit"></a></li>
+                </ul>
+            </div>
+        </div>-->
+    </section>
+    <script src="../common/js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/main.js"></script>
+     
+</body>
+</html>
