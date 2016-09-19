@@ -1,6 +1,6 @@
 ﻿$(function () {
     //页面导航
-    // $("#main").on("swipeleft", swipeleftHandler).on("swiperight", swiperightHandler);
+    $(".listbox").on("swipeleft", swipeleftHandler).on("swiperight", swiperightHandler);
     //右滑动
     function swiperightHandler(event) {
         console.log("右滑动");

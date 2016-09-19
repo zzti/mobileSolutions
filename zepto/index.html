@@ -1,11 +1,19 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html >
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>JqueryMobile</title>
-    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="stoneniqiu">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>Zepto+SUI</title>
+    <link href="css/sm.min.css" rel="stylesheet" />
+    <link href="css/sm-extend.min.css" rel="stylesheet" />
+    <script src="js/zepto.min.js"></script>
     <link href="css/style.css" rel="stylesheet" />
+
 </head>
 
 <!--
@@ -16,177 +24,516 @@
     5.form
     6.上下拉动
  -->
-<body  >
-    <section data-role="page" id="main">
-        <div class="mainheader warm">
-            <a class="fl" title="设置" href="#left" data-transition="slide"><img src="../common/images/cog_30.png" /></a>
-            JqueryMobile
-            <a class="fr" title="时间轴" href="#right" data-transition="slide"><img src="../common/images/dot_30.png" /></a>
-        </div>
-        <div class="baby-content">
-            <!--<div class="airbox warm">
-                    <div class="air">良好</div>
-                    <div class="tempwarp">
-                        <canvas id="temperature" width="300" height="144"></canvas>
+<body >
+    <div class="page-group">
+        <div id="home" class="page page-current">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-transition='slide-out'>
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class="title">首页</h1>
+            </header>
+            <nav id="footertabs" class="bar bar-tab">
+                <a class="tab-item active" href="#home">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item " href="#miti">
+                    <span class="icon icon-edit"></span>
+                    <span class="tab-label">我要出题</span>
+                </a>
+                <a class="tab-item " href="#user">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">个人中心</span>
+                </a>
+                <a class="tab-item" href="#firends">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">我的好友</span>
+                </a>
+                <a class="tab-item " href="#message">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">我的消息</span>
+                </a>
+            </nav>
+            <div class="content">
+                <div class="swiper-container" data-space-between='10'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="css/images/b1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="css/images/b2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="css/images/b3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="css/images/b4.jpg" alt=""></div>
                     </div>
-                </div>-->
-            <div id="viewport">
-                <div id="wrapper1">
-                    <div id="scroller1">
-                        <div class="slide">
-                            <div class="painting giotto"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="painting leonardo"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="painting gaugin"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="painting warhol"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="painting timg"></div>
-                        </div>
-                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div id="indicator">
-                    <div id="dotty">11</div>
+                <h3>按钮</h3>
+                <div class="content-block">
+                    <p><a href="#" class="button button-fill alert-text-title-callback">alert-text-title-callback</a></p>
+                    <p><a href="#" id="toast" class="button button-fill button-success ">toast </a></p>
+                    <p><a href="#" class="button button-fill button-danger">Fill Button </a></p>
+                    <p><a href="#" class="button button-fill button-warning">Fill Button </a></p>
                 </div>
-            </div>
-                <div class="listbox">
-                    <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                            <a data-rel="popup" href="#popupSydney" data-position-to="window" data-transition="fade" class="ui-shadow ui-btn music"><img src="css/images/b1.jpg" data-id="1"></a>
-                        </div>
-                        <div class="ui-block-b"><a href="#b2" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-shadow ui-btn music"><img src="css/images/b2.jpg" data-id="2"></a></div>
-                        <div class="ui-block-a"><a class="ui-shadow ui-btn music"><img src="css/images/b3.jpg" data-id="3"></a></div><div class="ui-block-b"><a class="ui-shadow ui-btn music"><img src="css/images/b4.jpg" data-id="4"></a></div>
-                    </div>
-                    <div data-role="popup" id="popupSydney" data-overlay-theme="a" data-theme="a" data-corners="false">
-                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                        <img class="popphoto" src="css/images/b1.jpg" style="max-height:512px;" alt="Sydney, Australia">
-                    </div>
-                    <div data-role="popup" id="b2" data-overlay-theme="b" data-theme="b" data-corners="false">
-                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                        <img class="popphoto" src="css/images/b2.jpg" style="max-height:512px;" alt="Sydney, Australia">
-                    </div>
-                </div>
-            <a href="#popupCloseRight" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">弹框</a>
-            <div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width:280px">
-                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-                <p>这是一个弹框</p>
+            
             </div>
         </div>
-        <div data-role="footer" style="overflow:hidden;">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#left" data-transition="slide" data-reverse="true" data-icon="gear"></a></li>
-                    <li><a href="#main" data-transition="slide" class="ui-btn-active" data-icon="home"></a></li>
-                    <li><a href="#right" data-transition="slide" data-icon="edit"></a></li>
-                </ul>
-            </div><!-- /navbar -->
-        </div><!-- /footer -->
-    </section>
-    <section data-role="page" id="left">
-        <div class="mainheader warm">
-            <a class="right-nav" href="#main" data-transition="slide"> </a>
-            设置
-        </div>
-        <div class="baby-content">
-            <form>
-                <label for="Name">姓名</label>
-                <input required type="text" data-clear-btn="true" name="text-3" id="Name" value="">
-                <label for="number-4">电话</label>
-                <input required type="tel" data-clear-btn="true" name="number-4" pattern="^(0|86|17951)?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}" id="number-4" value="">
-                <div class="ui-field-contain">
-                    <label for="select-native-1">语言:</label>
-                    <select name="select-native-1" id="select-native-1">
-                        <option value="1">JavaScript</option>
-                        <option value="2">C#</option>
-                        <option value="3">Java</option>
-                        <option value="4">Phyon</option>
-                    </select>
+        <div id="message" class="page">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-transition='slide-out'>
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class="title">我的消息-下拉刷新</h1>
+            </header>
+            <nav id="footertabs" class="bar bar-tab">
+                <a class="tab-item" href="#home">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item " href="#miti">
+                    <span class="icon icon-edit"></span>
+                    <span class="tab-label">我要出题</span>
+                </a>
+                <a class="tab-item " href="#user">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">个人中心</span>
+                </a>
+                <a class="tab-item" href="#firends">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">我的好友</span>
+                </a>
+                <a class="tab-item active" href="#message">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">我的消息</span>
+                </a>
+            </nav>
+            <div class="content pull-to-refresh-content infinite-scroll infinite-scroll-bottom" data-ptr-distance="55" data-distance="100">
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
                 </div>
-                <fieldset data-role="controlgroup">
-                    <legend>物种:</legend>
-                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
-                    <label for="radio-choice-v-2a">程序媛</label>
-                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="off">
-                    <label for="radio-choice-v-2b">程序猿</label>
-                </fieldset>
-                <label for="flip-1">单身汪</label>
-                <select id="flip-1" name="flip-1" data-role="slider">
-                    <option value="off">是</option>
-                    <option value="on">否</option>
-                </select>
-                <label for="email-2">Email</label>
-                <input required type="email" data-clear-btn="true" name="email-2" id="email-2" value="">
-                <label for="data">日期</label>
-                <input required type="datetime-local" data-clear-btn="true" id="data" />
-                <label for="textarea-1">描述:</label>
-                <textarea required name="textarea-1" id="textarea-1"></textarea>
-                <button type="submit">提交</button>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">card</div>
+                        <div class="card-content">
+                            <div class="card-content-inner">
+                                这里是第1个card，下拉刷新会出现第2个card。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-block">
+                    <ul class="list-container">
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 1</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 2</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 3</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 4</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 5</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 6</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 7</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 8</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 9</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 10</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 11</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 12</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 13</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 14</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 15</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 16</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 17</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 18</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 19</div></div></li>
+                        <li class="item-content"><div class="item-inner"><div class="item-title">Item 20</div></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="firends" class="page">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-transition='slide-out'>
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class="title">我的好友</h1>
+            </header>
+            <nav id="footertabs" class="bar bar-tab">
+                <a class="tab-item" href="#home">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item " href="#miti">
+                    <span class="icon icon-edit"></span>
+                    <span class="tab-label">我要出题</span>
+                </a>
+                <a class="tab-item " href="#user">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">个人中心</span>
+                </a>
+                <a class="tab-item active" href="#firends">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">我的好友</span>
+                </a>
+                <a class="tab-item " href="#message">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">我的消息</span>
+                </a>
+            </nav>
+            <div class="content">
+                <div class="list-block contacts-block">
+                    <div class="list-group">
+                        <ul>
 
-            </form>
-        </div>
+                            <li class="list-group-title">J</li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">揭迷达人</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-title">T</li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">test1</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">test2</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">test3</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">test4</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">test5</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-title">Z</li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title"><a href="#">张百万</a></div>
+                                    </div>
+                                </div>
+                            </li>
 
-    </section>
-    <section data-role="page" id="right">
-        <div class="mainheader warm">
-            <a class="left-nav" href="#main" data-transition="slide" data-reverse="true"> </a>
-            日志
-        </div>
-        <div class="baby-content" id="wrapper">
-            <div id="scroller">
-                <div id="pullDown" class="">
-                    <span class="pullDownIcon">
-                        <img src="../common/images/loading-2.gif" />
-                    </span><span class="pullDownLabel">下拉刷新...</span>
-                </div>
-                <ul data-role="listview" data-filter="true" data-filter-placeholder="搜索">
-                    <li>
-                        <img src="css/images/jm.png" />
-                        <h2>jQueryMobile</h2>
-                        <p><a href="http://jquerymobile.com/">jQueryMobile1.4.5</a>  js:196k css:203k</p>
-                    </li>
-                    <li>
-                        <img src="css/images/zp.png" />
-                        <h2>Zepto</h2>
-                        <p><a href="http://zeptojs.com/">Zepto.js1.2.0</a> js:26k</p>
-                    </li>
-                    <li>bootstrap</li>
-                    <li>react</li>
-                    <li>Angular</li>
-                    <li>senchaTouch</li>
-                    <li>
-                        <img src="css/images/jq.png" />
-                        <h2>jQuery</h2>
-                        <p><a href="http://jquery.com/">jQuery3.1.0</a></p>
-                    </li>
-                    <li>mobilebone</li>
-                   
-                </ul>
-                <div id="pullUp">
-                    <span class="pullUpIcon"><img src="../common/images/loading-2.gif" /></span>
-                    <span class="pullUpLabel">上拉加载更多...</span>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
-        
         </div>
-        <!--<div data-role="footer" style="overflow:hidden;">
-            <div data-role="navbar">
-                <ul>
-                    <li><a href="#left" data-transition="slide" data-icon="gear"></a></li>
-                    <li><a href="#main" data-transition="slide" data-icon="home"></a></li>
-                    <li><a href="#right" data-transition="slide" class="ui-btn-active" data-icon="edit"></a></li>
-                </ul>
+        <div id="miti" class="page ">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-transition='slide-out'>
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class="title">谜题</h1>
+            </header>
+            <nav id="footertabs" class="bar bar-tab">
+                <a class="tab-item " href="#home">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item active" href="#miti">
+                    <span class="icon icon-edit"></span>
+                    <span class="tab-label">我要出题</span>
+                </a>
+                <a class="tab-item " href="#user">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">个人中心</span>
+                </a>
+                <a class="tab-item" href="#firends">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">我的好友</span>
+                </a>
+                <a class="tab-item " href="#message">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">我的消息</span>
+                </a>
+            </nav>
+            <div class="content">
+                <div class="content-block row">
+                    <div class="col-50"><a href="#" class="button pb-standalone">Standalone</a></div>
+                    <div class="col-50"><a href="#" class="button pb-popup">Popup</a></div>
+                </div>
+                
+                <div class="list-block">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">姓名</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="Your name">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">邮箱</div>
+                                    <div class="item-input">
+                                        <input type="email" placeholder="E-mail">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="Password" class="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">性别</div>
+                                    <div class="item-input">
+                                        <select>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Date -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">生日</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="Birth day" value="2014-04-30">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Switch (Checkbox) -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">开关</div>
+                                    <div class="item-input">
+                                        <label class="label-switch">
+                                            <input type="checkbox">
+                                            <div class="checkbox"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="align-top">
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">文本域</div>
+                                    <div class="item-input">
+                                        <textarea></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <div class="row">
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
+                        <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+                    </div>
+                </div>
             </div>
-        </div>-->
-    </section>
-    <script src="../common/js/jquery-1.11.3.min.js"></script>
-    <script src="js/jquery.mobile-1.4.5.js"></script>
-    <script src="js/iscroll.js"></script>
-    <script src="js/main.js"></script>
-     
+        </div>
+        <div id="user" class="page ">
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" data-transition='slide-out'>
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class="title">用户中心</h1>
+            </header>
+            <nav id="footertabs" class="bar bar-tab">
+                <a class="tab-item " href="#home">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item " href="#miti">
+                    <span class="icon icon-edit"></span>
+                    <span class="tab-label">我要出题</span>
+                </a>
+                <a class="tab-item active" href="#user">
+                    <span class="icon icon-me"></span>
+                    <span class="tab-label">个人中心</span>
+                </a>
+                <a class="tab-item " href="#firends">
+                    <span class="icon icon-friends"></span>
+                    <span class="tab-label">我的好友</span>
+                </a>
+                <a class="tab-item " href="#message">
+                    <span class="icon icon-message"></span>
+                    <span class="tab-label">我的消息</span>
+                </a>
+            </nav>
+            <div class="content">
+                <img src="css/images/m1.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sm.min.js"></script>
+    <script src="js/sm-extend.min.js"></script>
+    <script>
+        $.init();
+        //页面初始化事件
+        $(document).on("pageInit", function (e, pageId, $page) {
+            console.log("pageInit pageId:", pageId);
+        });
+
+        $(document).on('click', '.alert-text-title-callback', function () {
+            $.alert('Here goes alert text', 'Custom Title!', function () {
+                $.alert('Button clicked!')
+            });
+        });
+
+        $(document).on('click', '#toast', function () {
+            $.toast('操作成功，正在跳转...', 2345, 'success top');
+        });
+
+        //下来刷新
+        $(document).on('refresh', '.pull-to-refresh-content', function (e) {
+            // 模拟2s的加载过程
+            setTimeout(function () {
+                var cardNumber = $(e.target).find('.card').length + 1;
+                var cardHTML = '<div class="card">' +
+                                  '<div class="card-header">card' + cardNumber + '</div>' +
+                                  '<div class="card-content">' +
+                                    '<div class="card-content-inner">' +
+                                        '这里是第' + cardNumber + '个card，下拉刷新会出现第' + (cardNumber + 1) + '个card。' +
+                                    '</div>' +
+                                  '</div>' +
+                              '</div>';
+
+                $(e.target).find('.card-container').prepend(cardHTML);
+                // 加载完毕需要重置
+                $.pullToRefreshDone('.pull-to-refresh-content');
+            }, 2000);
+        });
+
+        // 无限滚动
+        // 加载flag
+        var loading = false;
+        // 最多可加载的条目
+        var maxItems = 100;
+
+        // 每次加载添加多少条目
+        var itemsPerLoad = 20;
+
+        function addItems(number, lastIndex) {
+            // 生成新条目的HTML
+            var html = '';
+            for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+                html += '<li class="item-content"><div class="item-inner"><div class="item-title">Item ' + i + '</div></div></li>';
+            }
+            // 添加新条目
+            $('.infinite-scroll-bottom .list-container').append(html);
+
+        }
+        //预先加载20条
+        addItems(itemsPerLoad, 0);
+
+        // 上次加载的序号
+
+        var lastIndex = 20;
+
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll-bottom', function () {
+
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            // 模拟1s的加载过程
+            setTimeout(function () {
+                // 重置加载flag
+                loading = false;
+
+                if (lastIndex >= maxItems) {
+                    // 加载完毕，则注销无限加载事件，以防不必要的加载
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    // 删除加载提示符
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+
+                // 添加新条目
+                addItems(itemsPerLoad, lastIndex);
+                // 更新最后加载的序号
+                lastIndex = $('.list-container li').length;
+                //容器发生改变,如果是js滚动，需要刷新滚动
+                $.refreshScroller();
+            }, 1000);
+        });
+
+
+        //浏览器插件 有bug。 popup模式点几下就报错了
+        var myPhotoBrowserStandalone = $.photoBrowser({
+            photos: [
+                'css/images/m1.jpg',
+                'css/images/mm.jpg',
+            ]
+        });
+        //点击时打开图片浏览器
+        $(document).on('click', '.pb-standalone', function () {
+            myPhotoBrowserStandalone.open();
+        });
+
+        /*=== Popup ===*/
+        var myPhotoBrowserPopup = $.photoBrowser({
+            photos: [
+                 'css/images/m1.jpg',
+                'css/images/mm.jpg',
+            ],
+            type: 'popup'
+        });
+        $(document).on('click', '.pb-popup', function () {
+            myPhotoBrowserPopup.open();
+        });
+
+
+
+    </script>
 </body>
 </html>
